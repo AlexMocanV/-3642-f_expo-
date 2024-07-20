@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath>
+void f_expo(int a[], int n)
+{
+    int e[1000001];
+    e[1]=0;
+    for(int i=1;i<=1000001;i++)
+    {
+        e[i]=1+e[i/2];
+    }
+    for(int i=0;i<n;i++)
+    {
+        a[i]=e[a[i]]-1;
+    }
+}
+int main()
+{
+    int a[]={9,1,5,15,19,30},n=6;
+    f_expo(a,n);
+    for(int i=0;i<n;i++)
+    std::cout<<a[i]<<' ';
+
+    return 0;
+}
